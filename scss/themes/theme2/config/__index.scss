@@ -1,0 +1,97 @@
+$setting: (
+    default : (
+        background : #eee,
+        color : #333,
+        border-color : #333,
+        font-size : 15px,
+        font-family : (
+            Calibri,Candara,Segoe,"Segoe UI",Optima,Arial,sans-serif
+        )
+    ),
+    element : (
+        a : (
+            color: #b22222,
+        ),
+        a-hover: (
+            color: #a52a2a
+        ),
+        h2: (
+            margin: 0 0 9px 0
+        ),
+        ul: (
+            padding: 0,
+            margin: 0 0 9px 25px
+        ),
+        ol: (
+            padding: 0,
+            margin: 0 0 9px 25px
+        ),
+    ),
+    grid : (
+        cell : (
+            margin: 20px
+        )
+    ),
+    header : (
+        background: #fff,
+    ),
+    header-menu: (
+        item: (
+            padding: 8px,
+            margin: 20px,
+            color: #333
+        ),
+        item-active: (
+            border-color: #a52a2a,
+            border-width: 0 0 3px 0
+        ),
+        item-hover: (
+            border-color: #a52a2a,
+            border-width: 0 0 3px 0
+        )
+    ),
+    main : (
+        background: #fff,
+        menu : (
+            width: 225px
+        ),
+        content : (
+            background: #fff
+        )
+    ),
+    footer : (
+        color: #333
+    ),
+    main-menu: (
+        item: (
+            padding: 10px 15px,
+            margin: 0,
+            border-color: #5c5c5c
+        ),
+        item-active: (
+            color: #fff,
+            background: #a52a2a
+        ),
+        item-hover: (
+            color: #fff,
+            background: #a52a2a
+        )
+    ),
+    pagination: (
+        item: (
+            margin: 0 4px 0 0,
+            padding: 4px 8px,
+            background: #eee,
+            color: #333,
+            border-radius: 5px
+        ),
+        item-active: (
+            color: #fff,
+            background: #a52a2a
+        ),
+        item-hover: (
+            color: #fff,
+            background: #a52a2a
+        )
+    )
+);

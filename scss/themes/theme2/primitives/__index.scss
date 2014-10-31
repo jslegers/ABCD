@@ -1,0 +1,121 @@
+@import '../config/__index';
+
+%primitive__display-block__hack {
+    display: block;
+    *zoom: 1;
+}
+
+%primitive__display-block {
+    display: block;
+}
+
+%primitive__display-list-item {
+    display: list-item;
+}
+
+%primitive__blank-as-table__hack {
+    display: table;
+    content: "";
+}
+
+%primitive__position-relative {
+    position : relative;
+}
+
+%primitive__clear-both {
+    clear : both;
+}
+
+%primitive__float-left {
+    float : left;
+}
+
+%primitive__float-none {
+    float : none;
+}
+
+%primitive__margin-none {
+    margin: 0;
+}
+
+%primitive__padding-none {
+    padding: 0;
+}
+
+%primitive__width-fill {
+    min-width:50px;
+    width:10000px;
+    *width:auto;
+    display:table-cell;
+    float:none;
+    _float:left;
+}
+
+%primitive__width-full {
+    width: 100%;
+}
+
+%primitive__height-min-1px {
+    min-height: 1px;
+}
+
+%primitive__list-style-type-none {
+    list-style-type : none;
+}
+
+%primitive__list-style-type-disc {
+    list-style-type : disc;
+}
+
+%primitive__list-style-type-decimal {
+    list-style-type : decimal;
+}
+
+%primitive__overflow-visible {
+    overflow: visible;
+}
+
+%primitive__white-space-nowrap {
+    white-space: nowrap;
+}
+
+%primitive__white-space-normal {
+    white-space: normal;
+}
+
+%primitive__text-decoration-none {
+    text-decoration: none;
+}
+
+%primitive__border-default {
+    border: 0 solid map-get(map-get($setting, "default"), "border-color");
+}
+
+%primitive__color-default {
+    color: map-get(map-get($setting, "default"), "color");
+}
+
+%primitive__background-default {
+    background: map-get(map-get($setting, "default"), "background");
+}
+
+%primitive__font-size-default {
+    font-size: map-get(map-get($setting, "default"), "font-size");
+}
+
+%primitive__font-family-default {
+    font-family: map-get(map-get($setting, "default"), "font-family");
+}
+
+%primitive__clearfix {
+    &:before{
+        @extend %primitive__blank-as-table__hack;
+    }
+    & {
+        @extend %primitive__display-block__hack;
+    }
+    &:after {
+        @extend %primitive__blank-as-table__hack;
+        @extend %primitive__clear-both;
+    }
+}

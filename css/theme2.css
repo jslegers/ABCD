@@ -1,0 +1,163 @@
+section, header, main, footer, nav, h2, ol, ul, .cell, header .menu li, .pagination li, main .menu li, header .menu li a, .pagination li a, main .menu li a {
+  display: block;
+  *zoom: 1; }
+
+li {
+  display: list-item; }
+
+section:before, header:before, main:before, footer:before, nav:before, h2:before, ol:before, ul:before, .cell:before, header .menu li:before, .pagination li:before, main .menu li:before, header .menu li a:before, .pagination li a:before, main .menu li a:before, section:after, header:after, main:after, footer:after, nav:after, h2:after, ol:after, ul:after, .cell:after, header .menu li:after, .pagination li:after, main .menu li:after, header .menu li a:after, .pagination li a:after, main .menu li a:after {
+  display: table;
+  content: ""; }
+
+.cell, header .menu li, .pagination li, main .menu li, header .menu li a, .pagination li a, main .menu li a {
+  position: relative; }
+
+section:after, header:after, main:after, footer:after, nav:after, h2:after, ol:after, ul:after, .cell:after, header .menu li:after, .pagination li:after, main .menu li:after, header .menu li a:after, .pagination li a:after, main .menu li a:after {
+  clear: both; }
+
+nav, section, header, main, footer, header .menu ul, header .menu ol, main .menu ol, .pagination ul, header .menu li, .pagination li, header .menu li a, .pagination li a {
+  float: left; }
+
+main .menu li, main .menu li a {
+  float: none; }
+
+body, header .menu ul, header .menu ol, main .menu ol, .pagination ul {
+  margin: 0; }
+
+body, ol, ul {
+  padding: 0; }
+
+main .content {
+  min-width: 50px;
+  width: 10000px;
+  *width: auto;
+  display: table-cell;
+  float: none;
+  _float: left; }
+
+nav, section, header, main, footer, main .menu ol {
+  width: 100%; }
+
+nav, section, header, main, footer {
+  min-height: 1px; }
+
+header .menu ul, header .menu ol, main .menu ol, .pagination ul, header .menu li, .pagination li, main .menu li {
+  list-style-type: none; }
+
+ul {
+  list-style-type: disc; }
+
+ol {
+  list-style-type: decimal; }
+
+header .menu li, .pagination li, main .menu li {
+  overflow: visible; }
+
+header .menu li, .pagination li {
+  white-space: nowrap; }
+
+main .menu li {
+  white-space: normal; }
+
+header .menu li a, .pagination li a, main .menu li a {
+  text-decoration: none; }
+
+body, section, header, main, footer, nav, h2, ol, ul, li, a {
+  border: 0 solid #333; }
+
+body {
+  color: #333; }
+
+body {
+  background: #eee; }
+
+body {
+  font-size: 15px; }
+
+body {
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif; }
+
+h2 {
+  margin: 0 0 9px 0; }
+
+ol {
+  padding: 0;
+  margin: 0 0 9px 25px; }
+
+ul {
+  padding: 0;
+  margin: 0 0 9px 25px; }
+
+a {
+  color: #b22222; }
+  a:hover {
+    color: #a52a2a; }
+
+.cell {
+  margin: 20px; }
+
+footer {
+  color: #333; }
+
+header {
+  background: #fff; }
+
+header .menu li {
+  margin: 20px; }
+  header .menu li a {
+    padding: 8px;
+    color: #333; }
+    header .menu li a:hover {
+      border-color: #a52a2a;
+      border-width: 0 0 3px 0; }
+
+header .menu li.active a {
+  border-color: #a52a2a;
+  border-width: 0 0 3px 0; }
+  header .menu li.active a:hover {
+    border-color: #a52a2a;
+    border-width: 0 0 3px 0; }
+
+main {
+  background: #fff; }
+
+main .content {
+  background: #fff; }
+
+main .menu {
+  width: 225px; }
+
+main .menu li {
+  margin: 0; }
+  main .menu li a {
+    padding: 10px 15px;
+    border-color: #5c5c5c; }
+    main .menu li a:hover {
+      background: #a52a2a;
+      color: #fff; }
+
+main .menu li.active a {
+  background: #a52a2a;
+  color: #fff; }
+  main .menu li.active a:hover {
+    background: #a52a2a; }
+
+.pagination li {
+  margin: 0 4px 0 0;
+  border-radius: 5px; }
+  .pagination li a {
+    padding: 4px 8px;
+    background: #eee;
+    color: #333;
+    border-radius: 5px; }
+    .pagination li a:hover {
+      background: #a52a2a;
+      color: #fff; }
+
+.pagination li.active a {
+  background: #a52a2a;
+  color: #fff; }
+  .pagination li.active a:hover {
+    background: #a52a2a; }
+
+/*# sourceMappingURL=theme2.css.map */

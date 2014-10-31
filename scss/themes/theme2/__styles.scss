@@ -1,0 +1,112 @@
+@import 'components/__index';
+
+a {
+    @extend %element__a;
+}
+
+body {
+    @extend %element__body;
+}
+
+h2 {
+    @extend %element__h2;
+}
+
+li {
+    @extend %element__li;
+}
+
+nav {
+    @extend %element__nav;
+    @extend %component__grid__item;
+}
+
+ol {
+    @extend %element__ol;
+}
+
+section {
+    @extend %element__section;
+    @extend %component__grid__item;
+}
+
+header {
+    @extend %element__header;
+    @extend %component__grid__item;
+}
+
+main {
+    @extend %element__main;
+    @extend %component__grid__item;
+}
+
+footer {
+    @extend %element__footer;
+    @extend %component__grid__item;
+    @extend %component__section-footer;
+}
+
+ul {
+    @extend %element__ul;
+}
+
+.cell {
+    @extend %component__grid__cell;
+}
+
+main {
+    @extend %component__section-main;
+}
+
+main .content {
+    @extend %component__section-main__content;
+}
+
+main .menu {
+    @extend %component__section-main__menu;
+}
+
+main .menu ol {
+    @extend %primitive__width-full;
+    @extend %component__navigation-main-menu;
+}
+
+main .menu li {
+    @extend %component__navigation-main-menu__item;
+}
+
+main .menu li.active {
+    @extend %component__navigation-main-menu__item-active;
+}
+
+main .content {
+    @extend %primitive__width-fill;
+}
+
+header {
+    @extend %component__section-header;
+}
+
+header .menu ul, header .menu ol {
+    @extend %component__navigation-header-menu;
+}
+
+header .menu li {
+    @extend %component__navigation-header-menu__item;
+}
+
+header .menu li.active {
+    @extend %component__navigation-header-menu__item-active;
+}
+
+.pagination ul {
+    @extend %component__navigation-pagination;
+}
+
+.pagination li {
+    @extend %component__navigation-pagination__item;
+}
+
+.pagination li.active {
+    @extend %component__navigation-pagination__item-active;
+}
