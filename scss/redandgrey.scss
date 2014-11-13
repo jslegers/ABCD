@@ -1,5 +1,8 @@
 @import 'themes/redandgrey/__styles';
 
+// -------------------------------------------------
+// Extending elements :
+// -------------------------------------------------
 
 a {
     @include extend-element('a');
@@ -9,17 +12,28 @@ body {
     @include extend-element('body');
 }
 
+footer {
+    @include extend-element('footer');
+}
+
 h2 {
     @include extend-element('h2');
 }
 
-li {
-    @include extend-element('li');
+header {
+    @include extend-element('header');
+}
+
+main {
+    @include extend-element('main');
 }
 
 nav {
     @include extend-element('nav');
-    @include extend-component-grid('item');
+}
+
+li {
+    @include extend-element('li');
 }
 
 ol {
@@ -28,11 +42,23 @@ ol {
 
 section {
     @include extend-element('section');
-    @include extend-component-grid('item');
 }
 
 ul {
     @include extend-element('ul');
+}
+
+
+// -------------------------------------------------
+// Extending components & primitives :
+// -------------------------------------------------
+
+nav {
+    @include extend-component-grid('item');
+}
+
+section {
+    @include extend-component-grid('item');
 }
 
 .cell {
@@ -40,13 +66,11 @@ ul {
 }
 
 footer {
-    @include extend-element('footer');
     @include extend-component-grid('item');
     @include extend-component-section('footer');
 }
 
 main {
-    @include extend-element('main');
     @include extend-component-section('main');
     @include extend-component-grid('item');
 }
@@ -74,7 +98,6 @@ main .menu li.active {
 }
 
 header {
-    @include extend-element('header');
     @include extend-component-grid('item');
     @include extend-component-section('header');
 }
