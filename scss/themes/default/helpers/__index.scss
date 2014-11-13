@@ -1,0 +1,204 @@
+ 
+// -------------------------------------------------
+// Adding some missing string functions :
+// -------------------------------------------------
+
+@function str-replace($string, $old, $new : '') {
+    @if type-of($string) != string {
+        $string : '' + $string;
+    } 
+    $index: str-index($string, $old);
+    $str-length : str-length($old);
+    @while $index and $index > 0 {
+        $temp : $string;
+        $string : $new;
+        @if $index > 1 {
+            $string : str-slice($temp, 1, $index - 1) + $string;
+        }
+        @if $index + $str-length < str-length($temp) + 1 {
+            $string : $string + str-slice($temp, $index + $str-length);
+        }
+        $index: str-index($string, $old);
+    }
+    @return $string;
+}
+
+@function str-clean($string, $dreplacements: (
+    '%' : '-perc-',
+    '>' : '-gt-',
+    ':' : '-col-',
+    '!' : '-excl-',
+    '(' : '-l-b-',
+    ')' : '-r-r-',
+    ',' : '-c-',
+    '/' : '-ps-',
+    '"' : '-dq-',
+    "'" : '-sq-',
+    '.' : '-dot-',
+    ' ' : '-nbsp-'
+)) {
+    @each $old, $new in $dreplacements {
+        $string : str-replace($string, $old, $new);
+    }
+    @return $string;
+}
+
+// -------------------------------------------------
+// Dynamic rule creation :
+// -------------------------------------------------
+$dynamic-placeholders: ();
+$current-media-query : $default-media-query;
+
+@mixin generate-placeholder($placeholder, $styles : ()) {
+    %#{$placeholder} {
+        @if(length($styles) < 1) {
+            @content;
+        } @else {
+            @each $rule, $style in $styles {
+                $rule : str-replace(str-replace($rule, 'ie6-', '_'), 'ie67-', '*');
+                #{$rule}: $style;
+            }
+        }
+    }
+}
+
+@mixin generate-root-placeholder($placeholder, $styles : ()) {
+    @at-root {
+        @include generate-placeholder($placeholder, $styles) {
+            @content;
+        }
+    }
+    $dynamic-placeholders: append($dynamic-placeholders, $placeholder) !global;
+}
+
+@mixin extend-placeholder($placeholder) {
+    @extend %#{$placeholder} !optional;
+}
+
+@mixin rules($styles) {
+    @each $rule, $style in $styles {
+        $value : str-clean($style);
+        $placeholder : #{$current-media-query}-cascade-#{$rule}-#{$value};
+        @if not index($dynamic-placeholders, $placeholder) {
+            @include generate-root-placeholder($placeholder, ($rule : $style));
+        }
+        @include extend-placeholder($placeholder);
+    }
+}
+
+@mixin ruleset($styles) {
+    $placeholder : #{$current-media-query}-cascade;
+    @each $rule, $style in $styles {
+        $value : str-clean($style);
+        $placeholder : #{$placeholder}-#{$rule}-#{$value};
+    }
+    @if not index($dynamic-placeholders, $placeholder) {
+        @include generate-root-placeholder($placeholder, $styles);
+    }
+    @include extend-placeholder($placeholder);
+}
+
+@mixin respond-to($media) {
+    $screensizes : map-get($setting, 'screensize');
+    $range : map-get($screensizes, $media);
+    @if $range == null {
+        @warn 'Unknown screensize "#{$media}" for @mixin respond-to';
+    } @else {
+        $current-media-query : $media !global;
+        $min-width : nth($range, 1);
+        $max-width : nth($range, 2);
+        @if $min-width > 0 {
+            @if $max-width != infinity {
+                @media only screen and (min-width: $min-width) and (max-width: $max-width) { @content; }
+            } @else {
+                @media only screen and (min-width: $min-width) { @content; }
+            }
+        } @else {
+            @if $max-width != infinity {
+                @media only screen and (max-width: $max-width) { @content; }
+            } @else {
+                @content;
+            }
+        }
+        $current-media-query : $default-media-query !global;
+    }
+}
+
+
+// -------------------------------------------------
+// Get setting :
+// -------------------------------------------------
+@function setting($parameters) { 
+    $value : $setting;
+    $key : '';
+    @each $parameter in $parameters {
+        $key : $parameter;
+        @if map-has-key($value, $key) {
+            $value : map-get($value, $key);
+        } @else {
+            @return false;
+        }
+    }
+    @return ($key : $value);
+}
+
+@mixin setting($parameters...) {
+    $rule : setting($parameters);
+    @if $rule {
+        @include rules($rule);
+    }
+}
+
+@mixin settings($parameters...) {
+    $rules : setting($parameters);
+    @if $rules {
+        @each $key, $rule in $rules {
+            @include rules($rule);
+        }
+    }
+}
+
+// -------------------------------------------------
+// Defining primitives, elements and components :
+// -------------------------------------------------
+
+@mixin primitive($placeholder) {
+    @include generate-placeholder('primitive__' + $placeholder) { @content; }
+}
+
+@mixin element($placeholder) {
+    @include generate-placeholder('element__' + $placeholder) { @content; }
+}
+
+@mixin component($first, $parameters...) {
+    $component : $first;
+    @each $parameter in $parameters {
+        $component : $component + '--' + $parameter;
+    }
+    @include generate-placeholder('component__' + $component) { @content; }
+    $parameters : append($parameters, "__self");
+    $parameters : join(("component", $first), $parameters);
+    @include generate-placeholder('component__' + $component) {
+        @include settings($parameters...);
+    }
+}
+
+// -------------------------------------------------
+// Extending primitives, elements and components :
+// -------------------------------------------------
+
+@mixin extend-primitive($placeholder) {
+    @include extend-placeholder('primitive__' + $placeholder);
+}
+
+@mixin extend-element($placeholder) {
+    @include extend-placeholder('element__' + $placeholder);
+}
+
+@mixin extend-component($first, $parameters...) {
+    $component : $first;
+    @each $parameter in $parameters {
+        $component : $component + '--' + $parameter;
+    }
+    @include extend-placeholder('component__' + $component);
+}

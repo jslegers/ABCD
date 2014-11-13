@@ -1,0 +1,75 @@
+// -------------------------------------------------
+// Extending navigation components :
+// -------------------------------------------------
+
+@include component('navigation') {
+    @include extend-primitive('float-left');
+    @include extend-primitive('margin-none');
+    @include extend-primitive('list-style-type-none');
+}
+
+@include component('navigation--item') {
+    @include extend-primitive('clearfix');
+    @include extend-primitive('position-relative');
+    @include extend-primitive('list-style-type-none');
+    @include extend-primitive('overflow-visible');
+    & a {
+        @include extend-primitive('clearfix');
+        @include extend-primitive('position-relative');
+        @include extend-primitive('text-decoration-none');
+    }
+}
+
+@include component('navigation--item--horizontal') {
+    @include extend-component('navigation--item');
+    @include extend-primitive('float-left');
+    @include extend-primitive('white-space-nowrap');
+    & a {
+        @include extend-primitive('float-left');
+    }
+}
+
+@include component('navigation--item--vertical') {
+    @include extend-component('navigation--item');
+    @include extend-primitive('float-none');
+    @include extend-primitive('white-space-normal');
+    & a {
+        @include extend-primitive('float-none');
+    }
+}
+
+@mixin component-navigation($name, $orientation : 'horizontal') {
+    @include component('navigation--' + $name) {
+        @include extend-component('navigation');
+    }
+    
+    @include component('navigation', $name);
+
+    @include component('navigation--item--' + $name) {
+        @include extend-component('navigation--item--' + $orientation);
+        @include settings("component", "navigation", $name, "item", "__self");
+        & a {
+            @include settings("component", "navigation", $name, "item", "__link-normal");
+            &:hover {
+                @include settings("component", "navigation", $name, "item", "__link-hover");
+            }
+        }
+    }
+
+    @include component('navigation--item--' + $name + '--active') {
+        & a {
+            @include settings("component", "navigation", $name, "item", "__link-active");
+            &:hover {
+                @include settings("component", "navigation", $name, "item", "__link-active");
+            }
+        }
+    }
+}
+
+@mixin extend-component-navigation($parameters...) {
+    @include extend-component('navigation', $parameters...);
+}
+
+@mixin extend-component-navigation-item($parameters...) {
+    @include extend-component('navigation', "item", $parameters...);
+}

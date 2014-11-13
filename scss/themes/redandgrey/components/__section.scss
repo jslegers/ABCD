@@ -1,0 +1,11 @@
+// -------------------------------------------------
+// Extending section components :
+// -------------------------------------------------
+
+@mixin component-section($parameters...) {
+    @include component('section', $parameters...);
+}
+
+@mixin extend-component-section($parameters...) {
+    @include extend-component('section', $parameters...);
+}

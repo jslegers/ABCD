@@ -15,13 +15,13 @@ section:before, header:before, main:before, footer:before, nav:before, h2:before
 section:after, header:after, main:after, footer:after, nav:after, h2:after, ol:after, ul:after, .cell:after, header .menu li:after, .pagination li:after, main .menu li:after, header .menu li a:after, .pagination li a:after, main .menu li a:after {
   clear: both; }
 
-nav, section, header, main, footer, header .menu ul, header .menu ol, main .menu ol, .pagination ul, header .menu li, .pagination li, header .menu li a, .pagination li a {
+nav, section, footer, main, header, header .menu ul, header .menu ol, .pagination ul, main .menu ol, header .menu li, .pagination li, header .menu li a, .pagination li a {
   float: left; }
 
 main .menu li, main .menu li a {
   float: none; }
 
-body, header .menu ul, header .menu ol, main .menu ol, .pagination ul {
+body, header .menu ul, header .menu ol, .pagination ul, main .menu ol {
   margin: 0; }
 
 body, ol, ul {
@@ -35,13 +35,13 @@ main .content {
   float: none;
   _float: left; }
 
-nav, section, header, main, footer, main .menu ol {
+nav, section, footer, main, header, main .menu ol {
   width: 100%; }
 
-nav, section, header, main, footer {
+nav, section, footer, main, header {
   min-height: 1px; }
 
-header .menu ul, header .menu ol, main .menu ol, .pagination ul, header .menu li, .pagination li, main .menu li {
+header .menu ul, header .menu ol, .pagination ul, main .menu ol, header .menu li, .pagination li, main .menu li {
   list-style-type: none; }
 
 ul {
@@ -65,10 +65,10 @@ header .menu li a, .pagination li a, main .menu li a {
 body, section, header, main, footer, nav, h2, ol, ul, li, a {
   border: 0 solid #333; }
 
-body {
+body, .pagination li a {
   color: #333; }
 
-body {
+body, header {
   background: #282828; }
 
 body {
@@ -80,40 +80,21 @@ body {
 h2 {
   margin: 0 0 9px 0; }
 
-ol {
-  padding: 0;
-  margin: 0 0 9px 25px; }
-
-ul {
-  padding: 0;
+ol, ul {
+  padding: 0; }
+ol, ul {
   margin: 0 0 9px 25px; }
 
 a {
   color: #2b80a4; }
-  a:hover {
-    color: #337394; }
+a:hover {
+  color: #337394; }
 
 .cell {
   margin: 10px; }
 
-footer {
+footer, header .menu li a, main .menu li a {
   color: #fff; }
-
-header {
-  background: #282828; }
-
-header .menu li {
-  margin: 0; }
-  header .menu li a {
-    padding: 8px;
-    color: #fff; }
-    header .menu li a:hover {
-      background: #666; }
-
-header .menu li.active a {
-  background: #2b80a4; }
-  header .menu li.active a:hover {
-    background: #2b80a4; }
 
 main {
   background: #3d3d3d; }
@@ -124,37 +105,37 @@ main .content {
 main .menu {
   width: 225px; }
 
-main .menu li {
+header .menu li, main .menu li {
   margin: 0; }
-  main .menu li a {
-    padding: 10px 15px;
-    color: #fff;
-    border-color: #5c5c5c;
-    border-width: 1px 0 0 0; }
-    main .menu li a:hover {
-      background: #222; }
+header .menu li a {
+  padding: 8px; }
+header .menu li a:hover {
+  background: #666; }
 
-main .menu li.active a {
-  background: #222; }
-  main .menu li.active a:hover {
-    background: #222; }
+header .menu li.active a {
+  background: #2b80a4; }
 
 .pagination li {
-  margin: 0 4px 0 0;
+  margin: 0 4px 0 0; }
+.pagination li, .pagination li a {
   border-radius: 5px; }
-  .pagination li a {
-    padding: 4px 8px;
-    color: #333;
-    border-color: #ccc;
-    border-width: 1px;
-    border-radius: 5px; }
-    .pagination li a:hover {
-      background: #eee; }
-
-.pagination li.active a {
+.pagination li a {
+  padding: 4px 8px; }
+.pagination li a {
+  border-color: #ccc; }
+.pagination li a {
+  border-width: 1px; }
+.pagination li a:hover, .pagination li.active a {
   background: #eee; }
-  .pagination li.active a:hover {
-    background: #eee; }
+
+main .menu li a {
+  padding: 10px 15px; }
+main .menu li a {
+  border-width: 1px 0 0 0; }
+main .menu li a {
+  border-color: #5c5c5c; }
+main .menu li a:hover, main .menu li.active a {
+  background: #222; }
 
 main .content {
   height: 400px; }

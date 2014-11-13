@@ -1,5 +1,105 @@
 @import 'themes/default/__styles';
 
+
+a {
+    @include extend-element('a');
+}
+
+body {
+    @include extend-element('body');
+}
+
+h2 {
+    @include extend-element('h2');
+}
+
+li {
+    @include extend-element('li');
+}
+
+nav {
+    @include extend-element('nav');
+    @include extend-component-grid('item');
+}
+
+ol {
+    @include extend-element('ol');
+}
+
+section {
+    @include extend-element('section');
+    @include extend-component-grid('item');
+}
+
+ul {
+    @include extend-element('ul');
+}
+
+.cell {
+    @include extend-component-grid('cell');
+}
+
+footer {
+    @include extend-element('footer');
+    @include extend-component-grid('item');
+    @include extend-component-section('footer');
+}
+
+main {
+    @include extend-element('main');
+    @include extend-component-section('main');
+    @include extend-component-grid('item');
+}
+
 main .content {
-    height: 400px;
+    @include extend-component-section('main', 'content');
+    @include extend-primitive('width-fill');
+    @include rules((height : 400px));
+}
+
+main .menu {
+    @include extend-component-section('main', 'menu');
+}
+
+main .menu ol {
+    @include extend-primitive('width-full');
+    @include extend-component-navigation('main');
+}
+
+main .menu li {
+    @include extend-component-navigation-item('main');
+}
+
+main .menu li.active {
+    @include extend-component-navigation-item('main', 'active');
+}
+
+header {
+    @include extend-element('header');
+    @include extend-component-grid('item');
+    @include extend-component-section('header');
+}
+
+header .menu ul, header .menu ol {
+    @include extend-component-navigation('header');
+}
+
+header .menu li {
+    @include extend-component-navigation-item('header');
+}
+
+header .menu li.active {
+    @include extend-component-navigation-item('header', 'active');
+}
+
+.pagination ul {
+    @include extend-component-navigation('pagination');
+}
+
+.pagination li {
+    @include extend-component-navigation-item('pagination');
+}
+
+.pagination li.active {
+    @include extend-component-navigation-item('pagination', 'active');
 }

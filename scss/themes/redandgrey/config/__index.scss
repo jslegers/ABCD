@@ -10,23 +10,20 @@ $setting: (
         widescreen : 1200px infinity
     ),
     default : (
-        background : #282828,
+        background : #eee,
         color : #333,
         border-color : #333,
-        font-size : 13px,
+        font-size : 15px,
         font-family : (
-            "Helvetica Neue",
-            Helvetica,
-            Arial,
-            sans-serif
+            Calibri,Candara,Segoe,"Segoe UI",Optima,Arial,sans-serif
         )
     ),
     element : (
         a : (
-            color: #2b80a4
+            color: #b22222,
         ),
         a-hover: (
-            color: #337394
+            color: #a52a2a
         ),
         h2: (
             margin: 0 0 9px 0
@@ -44,29 +41,29 @@ $setting: (
         grid : (
             cell : (
                 __self : (
-                    margin: 10px
+                    margin: 20px
                 )
             )
         ),
         section : (
             header : (
                 __self : (
-                    background: #282828
+                    background: #fff
                 )
             ),
             footer : (
                 __self : (
-                    color: #fff
+                    color: #333
                 )
             ),
             main : (
                 __self : (
-                    background: #3d3d3d
+                    background: #fff
                 ),
                 menu : (
                     __self : (
                         width: 225px
-                    )
+                    ),
                 ),
                 content : (
                     __self : (
@@ -79,19 +76,21 @@ $setting: (
             header: (
                 item: (
                     __self : (
-                        margin: 0
+                        margin: 20px,
                     ),
                     __link-normal : (
                         padding: 8px,
-                        color: #fff
+                        color: #333
                     ),
                     __link-active : (
-                        background: #2b80a4
+                        border-color: #a52a2a,
+                        border-width: 0 0 3px 0
                     ),
                     __link-hover : (
-                        background: #666
+                        border-color: #a52a2a,
+                        border-width: 0 0 3px 0
                     ),
-                )
+                ),
             ),
             main: (
                 item: (
@@ -100,17 +99,17 @@ $setting: (
                     ),
                     __link-normal : (
                         padding: 10px 15px,
-                        color: #fff,
-                        border-width: 1px 0 0 0,
                         border-color: #5c5c5c
                     ),
                     __link-active : (
-                        background: #222
+                        color: #fff,
+                        background: #a52a2a
                     ),
                     __link-hover : (
-                        background: #222
-                    ),
-                ),
+                        color: #fff,
+                        background: #a52a2a
+                    )
+                )
             ),
             pagination: (
                 item: (
@@ -120,16 +119,17 @@ $setting: (
                     ),
                     __link-normal : (
                         padding: 4px 8px,
+                        background: #eee,
                         color: #333,
-                        border-color: #ccc,
-                        border-width: 1px,
                         border-radius: 5px
                     ),
                     __link-active : (
-                        background: #eee
+                        color: #fff,
+                        background: #a52a2a
                     ),
                     __link-hover : (
-                        background: #eee
+                        color: #fff,
+                        background: #a52a2a
                     )
                 )
             )

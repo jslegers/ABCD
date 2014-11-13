@@ -1,0 +1,19 @@
+@include component('grid', 'item') {
+    @include extend-primitive('clearfix');
+    @include extend-primitive('float-left');
+    @include extend-primitive('width-full');
+    @include extend-primitive('height-min-1px');
+}
+
+@include component('grid', 'cell') {
+    @include extend-primitive('clearfix');
+    @include extend-primitive('position-relative');
+}
+
+@mixin component-grid($parameters...) {
+    @include component('grid', $parameters...);
+}
+
+@mixin extend-component-grid($parameters...) {
+    @include extend-component('grid', $parameters...);
+}
