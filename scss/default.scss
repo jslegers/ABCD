@@ -52,8 +52,8 @@ main {
 }
 
 main .content {
-    @include extend-component-section('main', 'content');
     @include extend-primitive('width-fill');
+    @include extend-component-section('main', 'content');
     @include rules((height : 400px));
 }
 

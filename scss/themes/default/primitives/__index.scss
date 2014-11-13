@@ -114,7 +114,6 @@
         @include extend-primitive('display-block__hack');
     }
     &:after {
-        @include extend-primitive('blank-as-table__hack');
-        @include extend-primitive('clear-both');
+        @include extend-primitives('blank-as-table__hack', 'clear-both');
     }
 }

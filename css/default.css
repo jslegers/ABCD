@@ -107,8 +107,10 @@ main .menu {
 
 header .menu li, main .menu li {
   margin: 0; }
+
 header .menu li a {
   padding: 8px; }
+
 header .menu li a:hover {
   background: #666; }
 
@@ -119,12 +121,14 @@ header .menu li.active a {
   margin: 0 4px 0 0; }
 .pagination li, .pagination li a {
   border-radius: 5px; }
+
 .pagination li a {
   padding: 4px 8px; }
 .pagination li a {
   border-color: #ccc; }
 .pagination li a {
   border-width: 1px; }
+
 .pagination li a:hover, .pagination li.active a {
   background: #eee; }
 
@@ -134,6 +138,7 @@ main .menu li a {
   border-width: 1px 0 0 0; }
 main .menu li a {
   border-color: #5c5c5c; }
+
 main .menu li a:hover, main .menu li.active a {
   background: #222; }
 

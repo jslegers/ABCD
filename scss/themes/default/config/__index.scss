@@ -81,16 +81,29 @@ $setting: (
                     __self : (
                         margin: 0
                     ),
-                    __link-normal : (
-                        padding: 8px,
-                        color: #fff
+                    a : (
+                        __self : (
+                            padding: 8px,
+                            color: #fff
+                        )
                     ),
-                    __link-active : (
-                        background: #2b80a4
+                    a-hover : (
+                        __self : (
+                            background: #666
+                        )
                     ),
-                    __link-hover : (
-                        background: #666
-                    ),
+                    active: (
+                        a : (
+                            __self : (
+                                background: #2b80a4
+                            )
+                        ),
+                        a-hover : (
+                            __self : (
+                                background: #2b80a4
+                            )
+                        )
+                    )
                 )
             ),
             main: (
@@ -98,19 +111,32 @@ $setting: (
                     __self : (
                         margin: 0
                     ),
-                    __link-normal : (
-                        padding: 10px 15px,
-                        color: #fff,
-                        border-width: 1px 0 0 0,
-                        border-color: #5c5c5c
+                    a : (
+                        __self : (
+                            padding: 10px 15px,
+                            color: #fff,
+                            border-width: 1px 0 0 0,
+                            border-color: #5c5c5c
+                        )
                     ),
-                    __link-active : (
-                        background: #222
+                    a-hover : (
+                        __self : (
+                            background: #222
+                        )
                     ),
-                    __link-hover : (
-                        background: #222
-                    ),
-                ),
+                    active: (
+                        a : (
+                            __self : (
+                                background: #222
+                            )
+                        ),
+                        a-hover : (
+                            __self : (
+                                background: #222
+                            )
+                        )
+                    )
+                )
             ),
             pagination: (
                 item: (
@@ -118,18 +144,31 @@ $setting: (
                         margin: 0 4px 0 0,
                         border-radius: 5px
                     ),
-                    __link-normal : (
-                        padding: 4px 8px,
-                        color: #333,
-                        border-color: #ccc,
-                        border-width: 1px,
-                        border-radius: 5px
+                    a : (
+                        __self : (
+                            padding: 4px 8px,
+                            color: #333,
+                            border-color: #ccc,
+                            border-width: 1px,
+                            border-radius: 5px
+                        )
                     ),
-                    __link-active : (
-                        background: #eee
+                    a-hover : (
+                        __self : (
+                            background: #eee
+                        )
                     ),
-                    __link-hover : (
-                        background: #eee
+                    active: (
+                        a : (
+                            __self : (
+                                background: #eee
+                            )
+                        ),
+                        a-hover : (
+                            __self : (
+                                background: #eee
+                            )
+                        )
                     )
                 )
             )

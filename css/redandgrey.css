@@ -15,7 +15,7 @@ section:before, header:before, main:before, footer:before, nav:before, h2:before
 section:after, header:after, main:after, footer:after, nav:after, h2:after, ol:after, ul:after, .cell:after, header .menu li:after, .pagination li:after, main .menu li:after, header .menu li a:after, .pagination li a:after, main .menu li a:after {
   clear: both; }
 
-nav, section, header, main, footer, header .menu ul, header .menu ol, .pagination ul, main .menu ol, header .menu li, .pagination li, header .menu li a, .pagination li a {
+nav, section, footer, main, header, header .menu ul, header .menu ol, .pagination ul, main .menu ol, header .menu li, .pagination li, header .menu li a, .pagination li a {
   float: left; }
 
 main .menu li, main .menu li a {
@@ -35,10 +35,10 @@ main .content {
   float: none;
   _float: left; }
 
-nav, section, header, main, footer, main .menu ol {
+nav, section, footer, main, header, main .menu ol {
   width: 100%; }
 
-nav, section, header, main, footer {
+nav, section, footer, main, header {
   min-height: 1px; }
 
 header .menu ul, header .menu ol, .pagination ul, main .menu ol, header .menu li, .pagination li, main .menu li {
@@ -101,6 +101,7 @@ main .menu {
 
 header .menu li a {
   padding: 8px; }
+
 header .menu li a:hover, header .menu li.active a {
   border-color: #a52a2a; }
 header .menu li a:hover, header .menu li.active a {
@@ -110,8 +111,10 @@ header .menu li a:hover, header .menu li.active a {
   margin: 0 4px 0 0; }
 .pagination li, .pagination li a {
   border-radius: 5px; }
+
 .pagination li a {
   padding: 4px 8px; }
+
 .pagination li a:hover, .pagination li.active a, main .menu li a:hover, main .menu li.active a {
   color: #fff; }
 .pagination li a:hover, .pagination li.active a, main .menu li a:hover, main .menu li.active a {
@@ -119,6 +122,7 @@ header .menu li a:hover, header .menu li.active a {
 
 main .menu li {
   margin: 0; }
+
 main .menu li a {
   padding: 10px 15px; }
 main .menu li a {

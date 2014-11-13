@@ -1,13 +1,9 @@
 @include component('grid', 'item') {
-    @include extend-primitive('clearfix');
-    @include extend-primitive('float-left');
-    @include extend-primitive('width-full');
-    @include extend-primitive('height-min-1px');
+    @include extend-primitives('clearfix', 'float-left', 'width-full', 'height-min-1px');
 }
 
 @include component('grid', 'cell') {
-    @include extend-primitive('clearfix');
-    @include extend-primitive('position-relative');
+    @include extend-primitives('clearfix', 'position-relative');
 }
 
 @mixin component-grid($parameters...) {

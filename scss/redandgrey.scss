@@ -31,22 +31,6 @@ section {
     @include extend-component-grid('item');
 }
 
-header {
-    @include extend-element('header');
-    @include extend-component-grid('item');
-}
-
-main {
-    @include extend-element('main');
-    @include extend-component-grid('item');
-}
-
-footer {
-    @include extend-element('footer');
-    @include extend-component-grid('item');
-    @include extend-component-section('footer');
-}
-
 ul {
     @include extend-element('ul');
 }
@@ -55,11 +39,20 @@ ul {
     @include extend-component-grid('cell');
 }
 
+footer {
+    @include extend-element('footer');
+    @include extend-component-grid('item');
+    @include extend-component-section('footer');
+}
+
 main {
+    @include extend-element('main');
     @include extend-component-section('main');
+    @include extend-component-grid('item');
 }
 
 main .content {
+    @include extend-primitive('width-fill');
     @include extend-component-section('main', 'content');
 }
 
@@ -80,11 +73,9 @@ main .menu li.active {
     @include extend-component-navigation-item('main', 'active');
 }
 
-main .content {
-    @include extend-primitive('width-fill');
-}
-
 header {
+    @include extend-element('header');
+    @include extend-component-grid('item');
     @include extend-component-section('header');
 }
 

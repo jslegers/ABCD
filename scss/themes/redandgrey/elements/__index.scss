@@ -1,75 +1,55 @@
 @include element('body') {
-    @include extend-primitive('margin-none');
-    @include extend-primitive('padding-none');
-    @include extend-primitive('background-default');
-    @include extend-primitive('color-default');
-    @include extend-primitive('border-default');
-    @include extend-primitive('font-size-default');
-    @include extend-primitive('font-family-default');
+    @include extend-primitives('margin-none', 'padding-none', 'background-default', 'color-default', 'border-default', 'font-size-default', 'font-family-default');
     @include settings("element", "body");
 }
 
 @include element('section') {
-    @include extend-primitive('clearfix');
-    @include extend-primitive('border-default');
+    @include extend-primitives('clearfix', 'border-default');
     @include settings("element", "section");
 }
 
 @include element('header') {
-    @include extend-primitive('clearfix');
-    @include extend-primitive('border-default');
+    @include extend-primitives('clearfix', 'border-default');
     @include settings("element", "header");
 }
 
 @include element('main') {
-    @include extend-primitive('clearfix');
-    @include extend-primitive('border-default');
+    @include extend-primitives('clearfix', 'border-default');
     @include settings("element", "main");
 }
 
 @include element('footer') {
-    @include extend-primitive('clearfix');
-    @include extend-primitive('border-default');
+    @include extend-primitives('clearfix', 'border-default');
     @include settings("element", "footer");
 }
 
 @include element('div') {
-    @include extend-primitive('clearfix');
-    @include extend-primitive('border-default');
+    @include extend-primitives('clearfix', 'border-default');
     @include settings("element", "div");
 }
 
 @include element('nav') {
-    @include extend-primitive('clearfix');
-    @include extend-primitive('border-default');
+    @include extend-primitives('clearfix', 'border-default');
     @include settings("element", "nav");
 }
 
 @include element('h2') {
-    @include extend-primitive('clearfix');
-    @include extend-primitive('border-default');
+    @include extend-primitives('clearfix', 'border-default');
     @include settings("element", "h2");
 }
 
 @include element('ol') {
-    @include extend-primitive('clearfix');
-    @include extend-primitive('padding-none');
-    @include extend-primitive('border-default');
-    @include extend-primitive('list-style-type-decimal');
+    @include extend-primitives('clearfix', 'border-default', 'padding-none', 'list-style-type-decimal');
     @include settings("element", "ol");
 }
 
 @include element('ul') {
-    @include extend-primitive('clearfix');
-    @include extend-primitive('padding-none');
-    @include extend-primitive('border-default');
-    @include extend-primitive('list-style-type-disc');
+    @include extend-primitives('clearfix', 'border-default', 'padding-none', 'list-style-type-disc');
     @include settings("element", "ul");
 }
 
 @include element('li') {
-    @include extend-primitive('border-default');
-    @include extend-primitive('display-list-item');
+    @include extend-primitives('border-default', 'display-list-item');
     @include settings("element", "li");
 }
 

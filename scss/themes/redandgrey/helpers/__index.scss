@@ -24,18 +24,18 @@
 }
 
 @function str-clean($string, $dreplacements: (
-    '%' : '-perc-',
-    '>' : '-gt-',
-    ':' : '-col-',
-    '!' : '-excl-',
-    '(' : '-l-b-',
-    ')' : '-r-r-',
-    ',' : '-c-',
-    '/' : '-ps-',
-    '"' : '-dq-',
-    "'" : '-sq-',
-    '.' : '-dot-',
-    ' ' : '-nbsp-'
+'%' : '-perc-',
+'>' : '-gt-',
+':' : '-col-',
+'!' : '-excl-',
+'(' : '-l-b-',
+')' : '-r-r-',
+',' : '-c-',
+'/' : '-ps-',
+'"' : '-dq-',
+"'" : '-sq-',
+'.' : '-dot-',
+' ' : '-nbsp-'
 )) {
     @each $old, $new in $dreplacements {
         $string : str-replace($string, $old, $new);
@@ -172,14 +172,20 @@ $current-media-query : $default-media-query;
 
 @mixin component($first, $parameters...) {
     $component : $first;
+    $settings : ("component", $first);
     @each $parameter in $parameters {
-        $component : $component + '--' + $parameter;
+        @if($parameter == '') {
+
+        } @else {
+            $component : $component + '--' + $parameter;
+            $settings : append($settings, $parameter);
+        }
     }
-    @include generate-placeholder('component__' + $component) { @content; }
-    $parameters : append($parameters, "__self");
-    $parameters : join(("component", $first), $parameters);
-    @include generate-placeholder('component__' + $component) {
-        @include settings($parameters...);
+    $component : 'component__' + $component;
+    $settings : append($settings, "__self");
+    @include generate-placeholder($component) {
+        @include settings($settings...);
+        @content;
     }
 }
 
@@ -187,8 +193,14 @@ $current-media-query : $default-media-query;
 // Extending primitives, elements and components :
 // -------------------------------------------------
 
-@mixin extend-primitive($placeholder) {
-    @include extend-placeholder('primitive__' + $placeholder);
+@mixin extend-primitive($parameter) {
+    @include extend-placeholder('primitive__' + $parameter);
+}
+
+@mixin extend-primitives($parameters...) {
+    @each $parameter in $parameters {
+        @include extend-primitive($parameter);
+    }
 }
 
 @mixin extend-element($placeholder) {
@@ -198,7 +210,10 @@ $current-media-query : $default-media-query;
 @mixin extend-component($first, $parameters...) {
     $component : $first;
     @each $parameter in $parameters {
-        $component : $component + '--' + $parameter;
+        @if($parameter == '') {
+        } @else {
+            $component : $component + '--' + $parameter;
+        }
     }
     @include extend-placeholder('component__' + $component);
 }

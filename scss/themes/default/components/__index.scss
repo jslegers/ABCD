@@ -11,6 +11,6 @@
 @include component-section('main', 'content');
 @include component-section('main', 'menu');
 
-@include component-navigation('header', 'horizontal');
-@include component-navigation('pagination', 'horizontal');
+@include component-navigation('header');
+@include component-navigation('pagination');
 @include component-navigation('main', 'vertical');
